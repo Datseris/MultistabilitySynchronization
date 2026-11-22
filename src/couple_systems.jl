@@ -11,7 +11,7 @@ mutable struct CoupledParams{F, P, T <: AbstractVector, A <: AbstractMatrix, J}
     p::P                    # parameters of the original system
     τ::T                    # timescale of each copy
     k::Float64              # coupling strength
-    adj::A                  # adjacency matrix (N×N), adj[i,m] = 1 → m drives i
+    adj::A                  # adjacency matrix (N×N), if `adj[i,m] = 1` then copy m drives i
     js::J                   # coupled dimensions
     D::Int                  # dimension of the original system
     scale_coupling::Bool    # whether to also multiply the coupling term by τ[i]
